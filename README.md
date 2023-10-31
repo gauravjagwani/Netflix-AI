@@ -13,6 +13,7 @@
 - create Signup user Account
 - IMplement Sign in user API
 - Create Redux store wiht UserSlice
+- Registered on TMDB and got data from API
 
 # Features
 

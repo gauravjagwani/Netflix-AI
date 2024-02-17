@@ -55,7 +55,7 @@ const MoodMagicSearchBar = () => {
   return (
     <div className="pt-[15%] flex justify-center">
       <form
-        className="w-[45%] bg-black grid grid-cols-12 bg-opacity-50 rounded-md"
+        className="md:w-[45%] w-full bg-black grid grid-cols-12 bg-opacity-50 rounded-md"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
@@ -65,7 +65,7 @@ const MoodMagicSearchBar = () => {
           placeholder={lang[language].moodMagicPlaceHolder}
         />
         <button
-          className="rounded-md my-4 w-full bg-red-700 text-white ml-6"
+          className="rounded-md my-4 md:w-full w-[60px] bg-red-700 text-white md:ml-6 ml-3"
           onClick={handleMoodMagicSeachClick}
         >
           {lang[language].search}

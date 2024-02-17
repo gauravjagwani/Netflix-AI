@@ -34,7 +34,7 @@ const MovieDetailsVideo = ({ movieid }) => {
         src={
           "https://www.youtube.com/embed/" +
           trailerVideo?.key +
-          "?autoplay=1&mute=1"
+          "?autoplay=1&mute=2"
         }
         title="YouTube video player"
         frameBorder="0"

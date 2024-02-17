@@ -2,9 +2,11 @@ import { API_OPTION } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addNowPlayingMovies } from "../utils/movieSlice";
 import { useEffect } from "react";
+import { useState } from "react";
 
 const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(true);
 
   const getNowPlayingMovies = async () => {
     const data = await fetch(
@@ -18,6 +20,7 @@ const useNowPlayingMovies = () => {
 
   useEffect(() => {
     getNowPlayingMovies();
+    setIsLoading(false);
   }, []);
 };
 

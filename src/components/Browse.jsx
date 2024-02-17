@@ -8,7 +8,7 @@ import SecondaryContainer from "./SecondaryContainer";
 import MoodMagicSearchPage from "./MoodMagicSearchPage";
 import { useSelector } from "react-redux";
 
-const Browse = () => {
+const Browse = ({ isLoading, setIsLoading }) => {
   const showMoodMagic = useSelector((store) => store.moodmagic.showMoodMagic);
   useNowPlayingMovies();
   usePopularMovies();
@@ -22,7 +22,10 @@ const Browse = () => {
       ) : (
         <>
           <MainContainer />
-          <SecondaryContainer />
+          <SecondaryContainer
+            isLoading={isLoading}
+            setIsLoading={setIsLoading}
+          />
         </>
       )}
     </div>

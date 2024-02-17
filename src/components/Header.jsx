@@ -57,10 +57,11 @@ const Header = () => {
     dispatch(changeLangauge(e.target.value));
   };
   return (
-    <div className="absolute inline-block px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex justify-between ">
-      <img className="w-44" src={LOGO} alt="Netflix logo" />
+    // <div className="absolute inline-block px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex flex-col md:flex-row justify-between lg:bg-black sm:bg-blue-200 md:bg-green-400 ">
+    <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex md:flex-row flex-col justify-between">
+      <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="Netflix logo" />
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 ">
           {showMoodMagic && (
             <select
               className="p-2 m-2 bg-gray-950 text-white rounded-md"

@@ -7,6 +7,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import MovieDetails from "./MovieDetails";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const Body = () => {
   // const dispatch = useDispatch();
@@ -29,7 +30,9 @@ const Body = () => {
 
   return (
     <div>
-      <RouterProvider router={appRouter} />
+      <SkeletonTheme baseColor="#313131" highlightColor="#525252">
+        <RouterProvider router={appRouter} />
+      </SkeletonTheme>
     </div>
   );
 };

@@ -14,6 +14,7 @@
 - IMplement Sign in user API
 - Create Redux store wiht UserSlice
 - Registered on TMDB and got data from API
+- GPT Search Feature
 
 # Features
 

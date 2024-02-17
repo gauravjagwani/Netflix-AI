@@ -1,33 +1,30 @@
 import React from "react";
 import Header from "./Header";
-
-import { API_OPTION } from "../utils/constants";
-import { useDispatch, useSelector } from "react-redux";
-import { addNowPlayingMovies } from "../utils/movieSlice";
-import { useEffect } from "react";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import MoodMagicSearchPage from "./MoodMagicSearchPage";
+import { useSelector } from "react-redux";
 
 const Browse = () => {
-  const dispatch = useDispatch();
-  const getNowPlayingMovies = async () => {
-    const data = await fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?page=1",
-      API_OPTION
-    );
-    const json = await data.json();
-    console.log(json?.results);
-    dispatch(addNowPlayingMovies(json.results));
-  };
+  const showMoodMagic = useSelector((store) => store.moodmagic.showMoodMagic);
+  useNowPlayingMovies();
+  usePopularMovies();
+  useUpcomingMovies();
 
-  useEffect(() => {
-    getNowPlayingMovies();
-  }, []);
   return (
     <div>
       <Header />
-      <MainContainer />
-      <SecondaryContainer />
+      {showMoodMagic ? (
+        <MoodMagicSearchPage />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 };

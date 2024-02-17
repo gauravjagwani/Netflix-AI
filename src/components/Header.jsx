@@ -6,11 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { LOGO, USER_PROFILE } from "../utils/constants";
 import { addUser, removeUser } from "../utils/userSlice";
+import { toggleMoodMagicView } from "../utils/moodmagicSlice";
+// import lang from "../utils/languageConstants";
+import { SUPPORTED_LANGUAGES } from "../utils/constants";
+import { changeLangauge } from "../utils/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store?.user);
+  const showMoodMagic = useSelector((store) => store.moodmagic.showMoodMagic);
 
   const handleSignout = () => {
     signOut(auth)
@@ -42,11 +47,39 @@ const Header = () => {
       }
     });
   }, []);
+
+  const handleMoodSearchClick = () => {
+    // Toggle GPT Search
+    dispatch(toggleMoodMagicView());
+  };
+
+  const handleLangaugeChange = (e) => {
+    dispatch(changeLangauge(e.target.value));
+  };
   return (
-    <div className="absolute px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex justify-between ">
+    <div className="absolute inline-block px-8 py-2 bg-gradient-to-b from-black z-10 w-screen flex justify-between ">
       <img className="w-44" src={LOGO} alt="Netflix logo" />
       {user && (
-        <div className="flex">
+        <div className="flex p-2">
+          {showMoodMagic && (
+            <select
+              className="p-2 m-2 bg-gray-950 text-white rounded-md"
+              onChange={handleLangaugeChange}
+            >
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+
+          <button
+            onClick={handleMoodSearchClick}
+            className="bg-yellow-600 h-10 mx-2 my-auto px-3 rounded-md font-bold"
+          >
+            {showMoodMagic ? "Home Page" : "Mood Magic 🪄"}
+          </button>
           <img
             className=" my-auto mx-2 w-10 h-10 rounded-sm "
             // src={user.photoURL}

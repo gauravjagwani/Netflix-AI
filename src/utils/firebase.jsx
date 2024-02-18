@@ -8,12 +8,12 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCTjeInPUfqLTK633opEcy75MliAXC6B90",
+  apiKey: process.env.REACT_APP_FIREBASE_API,
   authDomain: "netflix-ai-f6543.firebaseapp.com",
   projectId: "netflix-ai-f6543",
   storageBucket: "netflix-ai-f6543.appspot.com",
   messagingSenderId: "42653664329",
-  appId: "1:42653664329:web:e6c3da4b406686220b2b98",
+  appId: process.env.REACT_APP_APPID,
   measurementId: "G-HBX8HVP21M",
 };
 

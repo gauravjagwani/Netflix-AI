@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Netflix-AI/static/css/main.7a3f6c0e.css",
-    "main.js": "/Netflix-AI/static/js/main.b71016bb.js",
+    "main.css": "/Netflix-AI/static/css/main.e26f5628.css",
+    "main.js": "/Netflix-AI/static/js/main.74a07b4f.js",
     "static/js/787.f87becb3.chunk.js": "/Netflix-AI/static/js/787.f87becb3.chunk.js",
     "index.html": "/Netflix-AI/index.html",
-    "main.7a3f6c0e.css.map": "/Netflix-AI/static/css/main.7a3f6c0e.css.map",
-    "main.b71016bb.js.map": "/Netflix-AI/static/js/main.b71016bb.js.map",
+    "main.e26f5628.css.map": "/Netflix-AI/static/css/main.e26f5628.css.map",
+    "main.74a07b4f.js.map": "/Netflix-AI/static/js/main.74a07b4f.js.map",
     "787.f87becb3.chunk.js.map": "/Netflix-AI/static/js/787.f87becb3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a3f6c0e.css",
-    "static/js/main.b71016bb.js"
+    "static/css/main.e26f5628.css",
+    "static/js/main.74a07b4f.js"
   ]
 }
